@@ -1,0 +1,53 @@
+# ===== Unity =====
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Asset meta data (only ignored when the asset itself is ignored)
+!/[Aa]ssets/**/*.meta
+
+# Auto-generated
+/[Aa]ssets/[Aa]ssetStoreTools*
+/[Aa]ssets/[Pp]lugins/[Ee]ditor/JetBrains*
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Rider / VS
+.idea/
+.vs/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Builds / packages
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics
+crashlytics-build.properties
+
+# ===== Git LFS is recommended for binary art/audio =====
+# See .gitattributes (add one to track *.png, *.fbx, *.wav, etc. via LFS)
