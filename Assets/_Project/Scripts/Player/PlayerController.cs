@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using FishNet.Object;
 using UnityEngine;
 
@@ -27,6 +28,10 @@ namespace AlienZoo.Player
         private AudioListener _listener;
         private float _pitch;
         private float _verticalVel;
+
+        // External movement modifiers (acid slow, cornfield drag...). Net speed = product of all.
+        private readonly Dictionary<Object, float> _speedModifiers = new();
+        private float _speedMultiplier = 1f;
 
         private void Awake()
         {
@@ -90,8 +95,33 @@ namespace AlienZoo.Player
             }
             _verticalVel += _gravity * Time.deltaTime;
 
-            Vector3 velocity = dir * _moveSpeed + Vector3.up * _verticalVel;
+            Vector3 velocity = dir * (_moveSpeed * _speedMultiplier) + Vector3.up * _verticalVel;
             _cc.Move(velocity * Time.deltaTime);
+        }
+
+        // ---- External speed modifiers (called by hazards / foliage on enter & exit) ----
+
+        /// <summary>Apply a movement multiplier from an environmental volume (key by the source).</summary>
+        public void SetSpeedModifier(Object source, float multiplier)
+        {
+            if (source == null) return;
+            _speedModifiers[source] = Mathf.Clamp01(multiplier);
+            RecomputeSpeed();
+        }
+
+        /// <summary>Remove a modifier when the player leaves that volume.</summary>
+        public void ClearSpeedModifier(Object source)
+        {
+            if (source != null && _speedModifiers.Remove(source))
+                RecomputeSpeed();
+        }
+
+        private void RecomputeSpeed()
+        {
+            float m = 1f;
+            foreach (var kv in _speedModifiers)
+                m *= kv.Value;
+            _speedMultiplier = m;
         }
 
         // Esc frees the cursor (handy in-editor); click to re-lock.
