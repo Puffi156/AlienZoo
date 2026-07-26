@@ -2177,7 +2177,7 @@ MonoBehaviour:
   <PrefabId>k__BackingField: 65535
   <SpawnableCollectionId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 0
-  SceneId: 0
+  SceneId: 4275697397
   SerializedTransformProperties:
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
@@ -6872,6 +6872,19 @@ MonoBehaviour:
   _hillAmplitude: 3.5
   _hillFrequency: 0.045
   _terrainSeed: 1337
+  _farmhousePrefab: {fileID: 0}
+  _barnPrefab: {fileID: 0}
+  _siloPrefab: {fileID: 0}
+  _shedPrefab: {fileID: 0}
+  _stablePrefab: {fileID: 0}
+  _shipPrefab: {fileID: 0}
+  _teleporterPrefab: {fileID: 0}
+  _acidSurfacePrefab: {fileID: 0}
+  _cornStalkPrefab: {fileID: 0}
+  _rockPrefab: {fileID: 0}
+  _crystalPrefab: {fileID: 0}
+  _tractorPrefab: {fileID: 0}
+  _fencePostPrefab: {fileID: 0}
 --- !u!4 &449114218
 Transform:
   m_ObjectHideFlags: 0
@@ -18687,7 +18700,7 @@ MonoBehaviour:
   <PrefabId>k__BackingField: 65535
   <SpawnableCollectionId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 0
-  SceneId: 0
+  SceneId: 4171102191
   SerializedTransformProperties:
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
@@ -30649,7 +30662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 8236318077773467826, guid: 722743383a0e29648ac9d48b4061cc6e, type: 3}
   _spawnPoints:
-  - {fileID: 0}
+  - {fileID: 276742156}
 --- !u!4 &2124339515
 Transform:
   m_ObjectHideFlags: 0
